@@ -143,7 +143,7 @@ const Reports = () => {
                     <CSVLink
                       headers={headers}
                       title="Export data to CSV"
-                      filename={`Navy_One_To_One_${date?.date}.csv`}
+                      filename={`Aktcl_Regular_${date?.date}.csv`}
                       data={downloaded}
                     >
                       `Download_${date?.date}`
@@ -163,7 +163,7 @@ const Reports = () => {
           <CSVLink
             headers={headers}
             title="Export data to CSV"
-            filename={"Navy_One_To_One.csv"}
+            filename={"Aktcl_Regular.csv"}
             data={report}
           >
             Download
