@@ -30,7 +30,7 @@ const LeadGenerate = () => {
   };
 
   const generateInitial = () => {
-    fetch("http://192.168.10.11:5065/initialLead?initDate=" + initialDate)
+    fetch("http://192.168.10.12:5065/initialLead?initDate=" + initialDate)
       .then((res) => res.json())
       .then((data) => {
         setInitialLeads(
@@ -54,7 +54,7 @@ const LeadGenerate = () => {
   ];
 
   const updateInitialLeads = () => {
-    fetch("http://192.168.10.11:5065/updateInitialLead", {
+    fetch("http://192.168.10.12:5065/updateInitialLead", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(initialLeads),
@@ -64,7 +64,7 @@ const LeadGenerate = () => {
   };
 
   const regenerateLeads = () => {
-    fetch("http://192.168.10.11:5065/regenerate?regenDate=" + regenDate)
+    fetch("http://192.168.10.12:5065/regenerate?regenDate=" + regenDate)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -86,7 +86,7 @@ const LeadGenerate = () => {
   };
 
   const regenerateUpdate = () => {
-    fetch("http://192.168.10.11:5065/regenerateUpdate", {
+    fetch("http://192.168.10.12:5065/regenerateUpdate", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(regenerate),

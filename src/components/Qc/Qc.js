@@ -14,13 +14,13 @@ const Qc = () => {
     setQcNumber(e.target.value);
   };
   const handleSearch = () => {
-    fetch(`http://192.168.10.11:5065/dMatched/${qcNumber}`)
+    fetch(`http://192.168.10.12:5065/dMatched/${qcNumber}`)
       .then((res) => res.json())
       .then((data) => setMatchedQC(data));
   };
   const handleUpdate = (id) => {
     console.log(id);
-    fetch(`http://192.168.10.11:5065/update/${id}`)
+    fetch(`http://192.168.10.12:5065/update/${id}`)
       .then((res) => res.json())
       .then((data) => setUpdate(data));
   };
