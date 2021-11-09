@@ -331,8 +331,8 @@ const SurveyBody = () => {
         <Form.Group onChange={q10value} as={Row}>
           <Form.Control as="select" className="w-50 ml-3">
             <option>...</option>
-            <option value="1stick">লাইটার</option>
-            <option value="2stick">ম্যাচ বাক্স</option>
+            <option value="lighter">লাইটার</option>
+            <option value="matchBox">ম্যাচ বাক্স</option>
             <option value="no">না</option>
             <option value="others">অন্যান্য</option>
           </Form.Control>
@@ -373,11 +373,12 @@ const SurveyBody = () => {
       <div
         style={{
           display:
-            (q10 === "1stick" ||
-              q10 === "2stick" ||
+            (q10 === "lighter" ||
+              q10 === "matchBox" ||
               q10 === "no" ||
               q10 === "others") &&
-            consumer?.CLUBMEMBER_visit_1 === 1
+            (consumer?.CLUBMEMBER_visit_1 === 1 ||
+              consumer?.CLUBMEMBER_visit_2 === 1)
               ? "block"
               : "none",
         }}
@@ -395,12 +396,12 @@ const SurveyBody = () => {
       <div
         style={{
           display:
-            ((q10 === "1stick" ||
-              q10 === "2stick" ||
+            ((q10 === "lighter" ||
+              q10 === "matchBox" ||
               q10 === "no" ||
               q10 === "others") &&
               (consumer?.CLUBMEMBER_visit_1 === 0 ||
-                consumer?.CLUBMEMBER_visit_1 === null)) ||
+                consumer?.CLUBMEMBER_visit_2 === 0)) ||
             q9 === "no"
               ? "block"
               : "none",
